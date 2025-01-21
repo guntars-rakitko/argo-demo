@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: nginx-ingresssroute-certificate
+  namespace: nginx
+spec:
+  secretName: nginx-certificate-secret
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+    - nginx-test.w1.lv
