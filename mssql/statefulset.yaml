@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mssql
-  #namespace: sales
+  namespace: development
 spec:
   serviceName: "mssql"
   replicas: 1
@@ -40,6 +40,8 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: mssql
+        namespace: development
+
       spec:
         accessModes:
           - ReadWriteOnce
